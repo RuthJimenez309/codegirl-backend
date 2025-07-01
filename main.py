@@ -1,4 +1,3 @@
-import uvicorn
 from db.supabase import supabase_manager
 from models import User, Transaction  
 from fastapi.middleware.cors import CORSMiddleware
@@ -124,5 +123,3 @@ def get_transactions():
         raise HTTPException(status_code=400, detail=str(e))
     return transactions_db
 
-if __name__ == "__main__":
-        uvicorn.run(app, host="0.0.0.0", port=8000)
